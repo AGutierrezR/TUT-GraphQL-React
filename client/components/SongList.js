@@ -1,10 +1,11 @@
 import React from 'react'
-import gql from 'graphql-tag'
-import { graphql } from 'react-apollo'
+import { useQuery, gql } from '@apollo/client'
 
-const SongList = ({ data }) => {
-  const { loading, songs } = data
+const SongList = () => {
+  const { data, loading, error } = useQuery(query)
+
   const renderSongs = () => {
+    const { songs } = data
     return songs.map((song) => {
       return (
         <li key={song.id} className="collection-item">
@@ -26,4 +27,4 @@ const query = gql`
   }
 `
 
-export default graphql(query)(SongList)
+export default SongList
