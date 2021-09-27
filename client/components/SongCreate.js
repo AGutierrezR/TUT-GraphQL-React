@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useMutation, gql } from '@apollo/client'
+import { Link, hashHistory } from 'react-router'
 
 const SongCreate = () => {
   const [title, setTitle] = useState('')
@@ -13,11 +14,12 @@ const SongCreate = () => {
       variables: {
         title,
       },
-    })
+    }).then(() => hashHistory.push('/'))
   }
 
   return (
     <div>
+      <Link to="/">Back</Link>
       <h3>Create a New Song</h3>
       <form onSubmit={onSubmit}>
         <label htmlFor="">Song Title:</label>
