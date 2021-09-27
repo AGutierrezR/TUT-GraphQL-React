@@ -5,21 +5,22 @@ import { graphql } from 'react-apollo'
 const SongList = ({ data }) => {
   const { loading, songs } = data
   const renderSongs = () => {
-    return (
-      <ul>
-        {songs.map((song) => {
-          return <li>{song.title}</li>
-        })}
-      </ul>
-    )
+    return songs.map((song) => {
+      return (
+        <li key={song.id} className="collection-item">
+          {song.title}
+        </li>
+      )
+    })
   }
 
-  return <div>{loading || renderSongs()}</div>
+  return <ul className="collection">{loading || renderSongs()}</ul>
 }
 
 const query = gql`
   {
     songs {
+      id
       title
     }
   }
