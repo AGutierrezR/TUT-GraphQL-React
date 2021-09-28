@@ -4,14 +4,13 @@ import { Link } from 'react-router'
 import { DELETE_SONG, FETCH_SONGS } from '../queries/apolloQueries'
 
 const SongList = () => {
-  const { data, loading, error } = useQuery(FETCH_SONGS)
+  const { data, loading, refetch } = useQuery(FETCH_SONGS)
   const [deleteSongMutation] = useMutation(DELETE_SONG)
 
   const onSongDelete = (id) => {
     deleteSongMutation({
       variables: { id },
-      refetchQueries: [{ query: FETCH_SONGS }],
-    })
+    }).then(() => refetch())
   }
 
   const renderSongs = () => {
