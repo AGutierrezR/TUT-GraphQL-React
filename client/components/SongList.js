@@ -1,17 +1,28 @@
 import React from 'react'
-import { useQuery } from '@apollo/client'
+import { useMutation, useQuery } from '@apollo/client'
 import { Link } from 'react-router'
-import { FETCH_SONGS } from '../queries/apolloQueries'
+import { DELETE_SONG, FETCH_SONGS } from '../queries/apolloQueries'
 
 const SongList = () => {
   const { data, loading, error } = useQuery(FETCH_SONGS)
+  const [deleteSongMutation] = useMutation(DELETE_SONG)
+
+  const onSongDelete = (id) => {
+    deleteSongMutation({
+      variables: { id },
+      refetchQueries: [{ query: FETCH_SONGS }],
+    })
+  }
 
   const renderSongs = () => {
     const { songs } = data
-    return songs.map((song) => {
+    return songs.map(({ title, id }) => {
       return (
-        <li key={song.id} className="collection-item">
-          {song.title}
+        <li key={id} className="collection-item">
+          {title}
+          <i className="material-icons" onClick={() => onSongDelete(id)}>
+            delete
+          </i>
         </li>
       )
     })
