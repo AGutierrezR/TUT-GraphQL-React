@@ -8,28 +8,28 @@
     "url": "https://github.com/StephenGrider/Lyrical-GraphQL"
   },
   "scripts": {
-    "dev": "nodemon index.js --ignore client"
+    "dev": "NODE_ENV=development nodemon index.js --ignore client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "^3.4.15",
-    "apollo-client": "^0.8.1",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.10.4",
     "axios": "^0.21.4",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-env": "^1.1.8",
-    "babel-preset-react": "^6.22.0",
+    "babel-loader": "^8.2.2",
     "body-parser": "^1.16.0",
     "connect-mongo": "^4.6.0",
-    "css-loader": "^6.3.0",
+    "css-loader": "^5.2.7",
     "dotenv": "^10.0.0",
     "express": "^4.14.0",
     "express-graphql": "^0.6.1",
     "express-session": "^1.15.0",
     "graphql": "^0.8.2",
-    "html-webpack-plugin": "^2.26.0",
+    "html-webpack-plugin": "^5.3.2",
     "lodash": "^4.17.4",
+    "mini-css-extract-plugin": "^2.3.0",
     "mongoose": "^5.9.2",
     "nodemon": "*",
     "passport": "^0.3.2",
@@ -38,9 +38,9 @@
     "react-apollo": "^3.1.5",
     "react-dom": "^17.0.2",
     "react-router": "^3.0.2",
-    "style-loader": "^0.13.1",
-    "webpack": "^2.2.0",
-    "webpack-dev-middleware": "^1.9.0"
+    "style-loader": "^2.0.0",
+    "webpack": "^5.12.2",
+    "webpack-dev-middleware": "^4.0.2"
   },
   "devDependencies": {
     "husky": "^4.3.8",
