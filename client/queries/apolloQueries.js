@@ -26,6 +26,7 @@ export const GET_SONG = gql`
       lyrics {
         id
         content
+        likes
       }
     }
   }
