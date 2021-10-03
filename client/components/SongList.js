@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQuery } from '@apollo/client'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { DELETE_SONG, FETCH_SONGS } from '../queries/apolloQueries'
 
 const SongList = () => {
