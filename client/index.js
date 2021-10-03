@@ -25,6 +25,9 @@ const Root = () => {
           <Route exact path="/songs/new">
             <App children={<SongCreate />}></App>
           </Route>
+          <Route path="/songs/:id">
+            <App children={<SongDetail />}></App>
+          </Route>
         </Switch>
       </HashRouter>
     </ApolloProvider>
