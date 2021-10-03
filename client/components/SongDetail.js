@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
 import { GET_SONG } from '../queries/apolloQueries'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const SongDetail = () => {
   const { id } = useParams()
@@ -14,6 +14,7 @@ const SongDetail = () => {
 
   return (
     <div>
+      <Link to="/">Back</Link>
       <h3>{song.title}</h3>
     </div>
   )
