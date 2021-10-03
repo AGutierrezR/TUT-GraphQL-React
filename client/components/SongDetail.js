@@ -3,6 +3,8 @@ import React from 'react'
 import { GET_SONG } from '../queries/apolloQueries'
 import { Link, useParams } from 'react-router-dom'
 
+import LyricCreate from './LyricCreate'
+
 const SongDetail = () => {
   const { id } = useParams()
   const { data, loading, error } = useQuery(GET_SONG, { variables: { id } })
@@ -16,6 +18,7 @@ const SongDetail = () => {
     <div>
       <Link to="/">Back</Link>
       <h3>{song.title}</h3>
+      <LyricCreate />
     </div>
   )
 }
