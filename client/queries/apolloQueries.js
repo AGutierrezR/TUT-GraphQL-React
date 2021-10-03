@@ -34,3 +34,14 @@ export const DELETE_SONG = gql`
     }
   }
 `
+
+export const ADD_LYRIC_TO_SONG = gql`
+  mutation AddLyricToSong($content: String, $songId: ID) {
+    addLyricToSong(content: $content, songId: $songId) {
+      id
+      lyrics {
+        content
+      }
+    }
+  }
+`
