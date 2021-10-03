@@ -8,6 +8,13 @@ const LyricCreate = ({ songId }) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
+
+    addLyricMutation({
+      variables: {
+        content,
+        songId,
+      },
+    }).then(() => setContent(''))
   }
 
   return (

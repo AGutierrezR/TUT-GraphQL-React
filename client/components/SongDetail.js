@@ -18,7 +18,7 @@ const SongDetail = () => {
     <div>
       <Link to="/">Back</Link>
       <h3>{song.title}</h3>
-      <LyricCreate />
+      <LyricCreate songId={id} />
     </div>
   )
 }
