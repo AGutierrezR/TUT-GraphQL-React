@@ -18,6 +18,15 @@ export const FETCH_SONGS = gql`
   }
 `
 
+export const GET_SONG = gql`
+  query SongQuery($id: ID!) {
+    song(id: $id) {
+      id
+      title
+    }
+  }
+`
+
 export const DELETE_SONG = gql`
   mutation DeleteSong($id: ID) {
     deleteSong(id: $id) {
