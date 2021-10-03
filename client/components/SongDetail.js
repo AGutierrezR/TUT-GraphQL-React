@@ -4,6 +4,7 @@ import { GET_SONG } from '../queries/apolloQueries'
 import { Link, useParams } from 'react-router-dom'
 
 import LyricCreate from './LyricCreate'
+import LyricList from './LyricList'
 
 const SongDetail = () => {
   const { id } = useParams()
@@ -18,6 +19,7 @@ const SongDetail = () => {
     <div>
       <Link to="/">Back</Link>
       <h3>{song.title}</h3>
+      <LyricList />
       <LyricCreate songId={id} />
     </div>
   )
