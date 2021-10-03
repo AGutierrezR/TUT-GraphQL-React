@@ -23,6 +23,10 @@ export const GET_SONG = gql`
     song(id: $id) {
       id
       title
+      lyrics {
+        id
+        content
+      }
     }
   }
 `
