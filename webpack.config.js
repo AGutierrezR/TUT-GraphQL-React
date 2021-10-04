@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -10,9 +10,11 @@ module.exports = {
   module: {
     rules: [
       {
-        use: 'babel-loader',
-        test: /\.js$/,
+        test: /\.m?js$/,
         exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
     ],
   },

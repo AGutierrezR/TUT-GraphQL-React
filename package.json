@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js --ignore client",
-    "prettier": "prettier --config .prettierrc --write ."
+    "prettier": "prettier --config .prettierrc --write .",
+    "eslint": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
@@ -42,6 +43,8 @@
     "webpack-dev-middleware": "^4.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
     "nodemon": "*",
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
