@@ -8,7 +8,7 @@ import LyricList from './LyricList'
 
 const SongDetail = () => {
   const { id } = useParams()
-  const { data, loading, error } = useQuery(GET_SONG, { variables: { id } })
+  const { data, loading } = useQuery(GET_SONG, { variables: { id } })
 
   if (loading) return <p>Loading...</p>
   if (!data?.song) return <p>Not found</p>

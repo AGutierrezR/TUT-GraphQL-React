@@ -18,17 +18,13 @@ const Root = () => {
   return (
     <ApolloProvider client={client}>
       <HashRouter>
-        <Switch>
-          <Route exact path="/">
-            <App children={<SongList />}></App>
-          </Route>
-          <Route exact path="/songs/new">
-            <App children={<SongCreate />}></App>
-          </Route>
-          <Route path="/songs/:id">
-            <App children={<SongDetail />}></App>
-          </Route>
-        </Switch>
+        <App>
+          <Switch>
+            <Route exact path="/" component={SongList} />
+            <Route path="/songs/new" exact component={SongCreate} />
+            <Route path="/songs/:id" component={SongDetail} />
+          </Switch>
+        </App>
       </HashRouter>
     </ApolloProvider>
   )

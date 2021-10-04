@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 

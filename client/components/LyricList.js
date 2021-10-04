@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useMutation } from '@apollo/client'
 import { LIKE_LYRIC } from '../queries/apolloQueries'
 
@@ -36,6 +37,10 @@ const LyricList = ({ lyrics }) => {
   }
 
   return <ul className="collection">{renderLyrics()}</ul>
+}
+
+LyricList.propTypes = {
+  lyrics: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default LyricList
