@@ -8,12 +8,14 @@
     "url": "https://github.com/StephenGrider/Lyrical-GraphQL"
   },
   "scripts": {
-    "dev": "NODE_ENV=development nodemon index.js --ignore client"
+    "dev": "NODE_ENV=development nodemon index.js --ignore client",
+    "prettier": "prettier --config .prettierrc --write .",
+    "eslint": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apollo/client": "^3.4.14",
+    "@apollo/client": "^3.4.15",
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.10.4",
@@ -43,6 +45,8 @@
     "webpack-dev-middleware": "^4.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1"
@@ -55,6 +59,9 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,scss,html,json}": [
       "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix"
     ]
   }
 }
