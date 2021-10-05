@@ -87,7 +87,7 @@ function signup({ email, password, req }) {
 // GraphQL, as GraphQL always expects to see a promise for handling async code.
 function login({ email, password, req }) {
   return new Promise((resolve, reject) => {
-    passport.authenticate('local', (err, user) => {
+    passport.authenticate('local', (_, user) => {
       if (!user) {
         reject('Invalid credentials.')
       }

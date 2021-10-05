@@ -15,7 +15,7 @@ module.exports = {
     semi: ['warn', 'never'],
     'no-console': ['warn'],
     'no-debugger': ['warn'],
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_', args: 'all' }],
     'no-empty': ['warn', { allowEmptyCatch: true }],
   },
 }
