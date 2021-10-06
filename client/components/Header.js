@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 
 import { FETCH_USER } from '../queries/CurrentUser'
@@ -21,12 +22,26 @@ const Header = () => {
       return <div>Logout</div>
     }
 
-    return <div>You&apos;re not signed in.</div>
+    return (
+      <>
+        <li>
+          <Link to="signup">Signup</Link>
+        </li>
+        <li>
+          <Link to="login">Login</Link>
+        </li>
+      </>
+    )
   }
 
   return (
     <nav>
-      <div className="nav-wrapper">{renderButtons()}</div>
+      <div className="nav-wrapper">
+        <Link to="" className="brand-logo left">
+          Home
+        </Link>
+        <ul className="right">{renderButtons()}</ul>
+      </div>
     </nav>
   )
 }
