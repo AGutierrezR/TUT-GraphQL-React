@@ -1,4 +1,5 @@
-import { FETCH_USER } from './CurrentUser'
+import { FETCH_USER } from './FetchUser'
+import { LOGIN } from './Login'
 import { LOGOUT } from './Logout'
 
-export { FETCH_USER, LOGOUT }
+export { FETCH_USER, LOGIN, LOGOUT }
