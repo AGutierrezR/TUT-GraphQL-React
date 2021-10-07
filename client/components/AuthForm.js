@@ -1,19 +1,30 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const AuthForm = (props) => {
+const AuthForm = ({ onSubmit, errors }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSubmit = (e) => {
+  const onFormSubmit = (e) => {
     e.preventDefault()
 
-    props.onSubmit({ email, password })
+    onSubmit({ email, password })
+  }
+
+  const renderErrors = () => {
+    return (
+      errors &&
+      errors.map((err) => (
+        <div className="errors" key={err}>
+          {err}
+        </div>
+      ))
+    )
   }
 
   return (
     <div className="row">
-      <form className="col s6" onSubmit={onSubmit}>
+      <form className="col s6" onSubmit={onFormSubmit}>
         <div className="input-field">
           <input
             type="text"
@@ -30,6 +41,7 @@ const AuthForm = (props) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {renderErrors()}
         <button className="btn">Submit</button>
       </form>
     </div>
@@ -38,6 +50,7 @@ const AuthForm = (props) => {
 
 AuthForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  errors: PropTypes.array,
 }
 
 export default AuthForm
