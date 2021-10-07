@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { HashRouter, Route, Switch } from 'react-router-dom'
+
 import App from './components/App'
+import LoginForm from './components/LoginForm'
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -15,7 +17,8 @@ const Root = () => {
       <HashRouter>
         <App>
           <Switch>
-            <Route exact path="/"></Route>
+            <Route exact path="/" />
+            <Route path="/login" component={LoginForm} />
           </Switch>
         </App>
       </HashRouter>
