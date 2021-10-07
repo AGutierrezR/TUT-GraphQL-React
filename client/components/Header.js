@@ -1,11 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { useQuery } from '@apollo/client'
+import { useQuery, useMutation } from '@apollo/client'
 
-import { FETCH_USER } from '../queries/CurrentUser'
+import { FETCH_USER, LOGOUT } from '../queries'
 
 const Header = () => {
   const { data, loading, error } = useQuery(FETCH_USER)
+  const [logoutMutation] = useMutation(LOGOUT)
+
+  const onLogoutClick = () => {
+    logoutMutation()
+  }
 
   const renderButtons = () => {
     if (loading) {
@@ -19,7 +24,11 @@ const Header = () => {
     const { user } = data
 
     if (user) {
-      return <div>Logout</div>
+      return (
+        <li>
+          <a onClick={onLogoutClick}>Logout</a>
+        </li>
+      )
     }
 
     return (
