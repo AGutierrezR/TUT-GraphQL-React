@@ -7,12 +7,16 @@ import AuthForm from './AuthForm'
 const LoginForm = () => {
   const [loginMutation] = useMutation(LOGIN)
 
-  console.log(loginMutation)
+  const onSubmit = ({ email, password }) => {
+    loginMutation({
+      variables: { email, password },
+    })
+  }
 
   return (
     <div>
       <h3>Login</h3>
-      <AuthForm />
+      <AuthForm onSubmit={onSubmit} />
     </div>
   )
 }
