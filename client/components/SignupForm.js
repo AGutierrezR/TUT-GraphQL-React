@@ -7,12 +7,16 @@ import AuthForm from './AuthForm'
 const SignupForm = () => {
   const [singupMutation] = useMutation(SIGNUP)
 
-  console.log(singupMutation)
+  const onSubmit = ({ email, password }) => {
+    singupMutation({
+      variables: { email, password },
+    })
+  }
 
   return (
     <div>
       <h3>Sign Up</h3>
-      <AuthForm />
+      <AuthForm onSubmit={onSubmit} />
     </div>
   )
 }
