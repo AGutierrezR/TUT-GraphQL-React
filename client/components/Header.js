@@ -9,7 +9,9 @@ const Header = () => {
   const [logoutMutation] = useMutation(LOGOUT)
 
   const onLogoutClick = () => {
-    logoutMutation()
+    logoutMutation({
+      refetchQueries: [{ query: FETCH_USER }],
+    })
   }
 
   const renderButtons = () => {
