@@ -18,6 +18,7 @@ module.exports = {
     quotes: ['warn', 'single'],
     semi: ['warn', 'never'],
     'no-console': ['warn'],
+    'no-debugger': ['warn'],
     'no-unused-vars': ['error', { argsIgnorePattern: '^_', args: 'all' }],
     'no-duplicate-imports': ['warn', { includeExports: true }],
     'no-empty': ['warn', { allowEmptyCatch: true }],

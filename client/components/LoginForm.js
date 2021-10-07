@@ -11,6 +11,8 @@ const LoginForm = () => {
     loginMutation({
       variables: { email, password },
       refetchQueries: [{ query: FETCH_USER }],
+    }).catch((res) => {
+      const errors = res.graphQLErrors.map((error) => error.message)
     })
   }
 
