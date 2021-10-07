@@ -15,6 +15,7 @@ const LoginForm = () => {
     loginMutation({
       variables: { email, password },
       refetchQueries: [{ query: FETCH_USER }],
+      awaitRefetchQueries: true,
     })
       .then(() => history.push('/dashboard'))
       .catch((res) => {
