@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { FETCH_USER, SIGNUP } from '../queries'
 
 import AuthForm from './AuthForm'
+import withRequireUnregisterUser from './withRequireUnregisterUser'
 
 const SignupForm = () => {
   const [singupMutation] = useMutation(SIGNUP)
@@ -32,4 +33,4 @@ const SignupForm = () => {
   )
 }
 
-export default SignupForm
+export default withRequireUnregisterUser(SignupForm)
