@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client'
 import { useHistory } from 'react-router-dom'
 import { FETCH_USER } from '../queries'
 
-const requireAuth = (BaseComponent) => {
+const withRequireAuth = (BaseComponent) => {
   const HOC = () => {
     const { data, loading } = useQuery(FETCH_USER)
     const history = useHistory()
@@ -20,4 +20,4 @@ const requireAuth = (BaseComponent) => {
   return HOC
 }
 
-export default requireAuth
+export default withRequireAuth
